@@ -1,5 +1,5 @@
 // 287. Find the Duplicate Number
-//Brute force - SORT & COMPARE
+//1. Brute force - SORT & COMPARE
     int findDuplicate(vector<int>& nums) {
         sort(nums.begin(), nums.end());
         for(int i=1;i<nums.size();i++){
@@ -9,7 +9,7 @@
         }
         return -1;
     }
-//Using hashmap
+//2. Using hashmap
     int findDuplicate(vector<int>& nums) {
         unordered_map <int,int> mp;
         for(int i: nums){
@@ -22,7 +22,7 @@
         }
         return -1;
     }
-//Using frequency vector 
+//3. Using frequency vector 
 int findDuplicate(vector<int>& nums) {
         int n = nums.size();
         vector <int> freq(n+1,0);
@@ -36,3 +36,19 @@ int findDuplicate(vector<int>& nums) {
         }
         return -1;
     }
+
+
+//75. Sort Colors
+//1. Using bubble sort
+void sortColors(vector<int>& nums) {
+        for(int i=0;i<nums.size();i++){
+            for(int j=0;j<nums.size();j++){
+                if (nums[i] < nums[j]){
+                    swap(nums[i], nums[j]);
+                }
+            }
+        }
+    }
+
+//26. Remove Duplicates from Sorted Array
+
